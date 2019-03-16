@@ -10,6 +10,8 @@ module IntercomRails
 
         if respond_to? :after_action
           after_action :intercom_rails_auto_include
+        elsif respond_to? :before_action
+          before_action :intercom_rails_auto_include
         else
           after_filter :intercom_rails_auto_include
         end
